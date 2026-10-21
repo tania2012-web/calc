@@ -40,6 +40,7 @@ const items=[
  {id:'aqua',name:'Аквалазурь',unit:'мл',packUnit:'мл в упаковке',price:862,size:2200},
  {id:'primer',name:'Грунтовка',unit:'мл',packUnit:'мл в упаковке',price:276,size:1000},
  {id:'impregnation',name:'Пропитка',unit:'мл',packUnit:'мл в упаковке',price:0,size:0},
+ {id:'oil',name:'Масло',unit:'мл',packUnit:'мл в упаковке',price:0,size:0},
 ];
 const root=document.getElementById('materials');
 root.innerHTML=items.map(x=>`<div class="material"><div class="mname">${x.name}<span class="munit">расход: ${x.unit}</span></div><div class="field"><span class="fieldlabel">Расход · ${x.unit}</span><input data-id="${x.id}" data-key="use" type="number" min="0" step="any" value="0" aria-label="Расход ${x.name}"><span class="suffix">${x.unit}</span></div><div class="field"><span class="fieldlabel">Упаковка · ₽ / ${x.packUnit}</span><input data-id="${x.id}" data-key="price" type="number" min="0" step="any" value="${x.price}" aria-label="Цена упаковки ${x.name}" title="Цена упаковки, ₽"></div><div class="field"><span class="fieldlabel">Количество в упаковке</span><input data-id="${x.id}" data-key="size" type="number" min="0" step="any" value="${x.size}" aria-label="Количество в упаковке ${x.name}" title="Количество в упаковке"><span class="suffix">${x.unit}</span></div><div class="rowcost"><span data-cost="${x.id}">0 ₽</span></div></div>`).join('');
